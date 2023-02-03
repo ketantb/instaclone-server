@@ -25,15 +25,15 @@ mongoose.connect(key, (err) => {
     // }
 })
 
-const data = fs.readFileSync("./templates/product.json", "utf-8")
+// const data = fs.readFileSync("./templates/product.json", "utf-8")
 
 app.get("/all", async (request, response) => {
     response.json(await Post.find())
 })
 
-app.get("/img", async (request, response) => {
-    // response.sendFile(path.join(__dirname, `./uploads/${req.params.fileName}`))
-})
+// app.get("/img", async (request, response) => {
+//     // response.sendFile(path.join(__dirname, `./uploads/${req.params.fileName}`))
+// })
 
 app.post("/post", async (request, response) => {
     const {date, description, id, likes, location, name} = request.body
