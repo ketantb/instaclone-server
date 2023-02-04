@@ -14,6 +14,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(fileUpload())
+const PORT = process.env.PORT || 8081 
 
 mongoose.set('strictQuery', true);
 mongoose.connect(key, (err) => {
@@ -61,8 +62,8 @@ app.post("/post", async (request, response) => {
     }
 })
 
-app.listen(8081, () => {
-    console.log("listening to port no 8081")
+app.listen(PORT, () => {
+    console.log(`listening to port no ${PORT}`)
 })
 
 module.exports = app;
